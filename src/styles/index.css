@@ -1,0 +1,30 @@
+:root {
+  font-family: "Vazir", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+
+  /* color */
+  --color-primary: #a62626;
+  --color-secondary: #be3737;
+  --color-text: rgb(0 0 0 / 46%);
+}
+
+body {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: auto;
+  padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
