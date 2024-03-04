@@ -8,9 +8,10 @@ import styles from "./SendOtpForm.module.css";
 // regex for mobile validation
 const regexMobile = /09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}/;
 
-function SendOtpForm({ mobile, setMobile, setStep }) {
+function SendOtpForm({ mobile, setMobile, setStep, setIsAuthShow }) {
   // isLoading for button effect
   const [isLoading, setIsLoading] = useState(false);
+  // console.log(setIsShowAuth);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -36,6 +37,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
     <form onSubmit={submitHandler} className={styles.form}>
       <div className={styles.headerContent}>
         <h3>ورود به حساب کاربری</h3>
+        <button onClick={() => setIsAuthShow((show) => !show)}>+</button>
       </div>
       <div className={styles.mainContent}>
         <h4>شماره موبایل خود را وارد نمایید</h4>

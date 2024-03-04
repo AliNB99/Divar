@@ -7,6 +7,8 @@
   --color-primary: #a62626;
   --color-secondary: #be3737;
   --color-text: rgb(0 0 0 / 46%);
+  --color-bgBtn: rgba(0, 0, 0, 0.04);
+  --color-btn: rgba(0, 0, 0, 0.56);
 }
 
 body {

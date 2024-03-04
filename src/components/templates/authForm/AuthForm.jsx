@@ -4,7 +4,7 @@ import SendOtpForm from "./sendOtpForm/SendOtpForm";
 
 import styles from "./AuthForm.module.css";
 
-function AuthForm() {
+function AuthForm({ setIsAuthShow }) {
   const [step, setStep] = useState(1);
   const [mobile, setMobile] = useState("");
   const [code, setCode] = useState("");
@@ -12,7 +12,12 @@ function AuthForm() {
   return (
     <div className={styles.container}>
       {step === 1 && (
-        <SendOtpForm mobile={mobile} setMobile={setMobile} setStep={setStep} />
+        <SendOtpForm
+          mobile={mobile}
+          setMobile={setMobile}
+          setStep={setStep}
+          setIsAuthShow={setIsAuthShow}
+        />
       )}
       {step === 2 && (
         <CheckOtpForm
@@ -20,6 +25,7 @@ function AuthForm() {
           code={code}
           setCode={setCode}
           setStep={setStep}
+          setIsAuthShow={setIsAuthShow}
         />
       )}
     </div>

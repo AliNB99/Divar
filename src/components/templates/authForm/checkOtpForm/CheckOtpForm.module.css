@@ -12,17 +12,19 @@
 }
 .headerContent h3 {
   font-weight: 300;
+  line-height: 1.5;
 }
 
 .mainContent {
   padding-left: 32px;
   padding-right: 32px;
-  padding-top: 8px;
+  padding-top: 16px;
 }
 
 .mainContent h4 {
   margin: 16px 0;
   font-weight: 300;
+  line-height: 2;
 }
 
 .mainContent p {
@@ -30,13 +32,6 @@
   color: var(--color-text);
   font-size: 14px;
   line-height: 2;
-}
-
-.mainContent span {
-  color: var(--color-primary);
-  display: inline-block;
-  cursor: pointer;
-  margin: 14px 0;
 }
 
 .mainContent input {
@@ -49,7 +44,7 @@
 }
 
 .mainContent input::placeholder {
-  color: var(--color-text);
+  color: var(--color-text)
 }
 
 .mainContent input:hover {
@@ -65,6 +60,28 @@ input::-webkit-inner-spin-button {
 
 .mainContent input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.ChangeMobileBtn {
+  direction: ltr;
+  padding-bottom: 32px;
+}
+
+.ChangeMobileBtn button {
+  margin: 8px 0;
+  border-radius: 16px;
+  padding: 0 12px;
+  background-color: var(--color-bgBtn);
+  color: var(--color-btn);
+  font-size: 0.75rem;
+  line-height: 1.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ChangeMobileBtn button:hover {
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .submitBtn {
