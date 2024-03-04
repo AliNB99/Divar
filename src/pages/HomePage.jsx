@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AuthForm from "../components/templates/authForm/AuthForm";
+import AuthForm from "components/templates/authForm/AuthForm";
 
 function HomePage() {
   const [isAuthShow, setIsAuthShow] = useState(true);

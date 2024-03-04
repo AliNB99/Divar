@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // Change English to Farsi
-import { e2p } from "../../../../utils/number";
+import { e2p } from "utils/number";
 // styles
 import styles from "./CheckOtpForm.module.css";
 // toast alert
@@ -8,9 +8,10 @@ import toast from "react-hot-toast";
 // loader inside the button
 import { ThreeDots } from "react-loader-spinner";
 //api
-import { checkOtp } from "../../../../services/auth";
+import { checkOtp } from "services/auth";
 
-import { setCookie } from "../../../../utils/cookies";
+// import { setCookie } from "utils/cookies";
+
 
 function CheckOtpForm({ mobile, code, setCode, setStep, setIsAuthShow }) {
   // isLoading for button effect
