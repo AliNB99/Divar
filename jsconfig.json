@@ -11,7 +11,8 @@
       "router/*": ["src/router/*"],
       "services/*": ["src/services/*"],
       "styles/*": ["src/styles/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "context/*": ["src/context/*"]
     }
   }
 }

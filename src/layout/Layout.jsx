@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-function Layout() {
+import styles from "./Layout.module.css";
+
+function Layout({ children }) {
   return (
-    <div>Layout</div>
-  )
+    <>
+      <Header />
+      <div className={styles.container}>{children}</div>
+      <Footer />
+    </>
+  );
 }
 
-export default Layout
+export default Layout;

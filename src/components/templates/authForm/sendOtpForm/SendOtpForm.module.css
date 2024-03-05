@@ -9,12 +9,16 @@
 .headerContent {
   border-bottom: 1px solid #ddd;
   padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .headerContent h3 {
   font-weight: 300;
 }
 
 .mainContent {
+  position: relative;
   padding-left: 32px;
   padding-right: 32px;
   padding-top: 8px;
@@ -44,16 +48,23 @@
   height: 40px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  padding: 0px 10px;
-  transition: all 0.3s;
-}
-
-.mainContent input::placeholder {
-  color: var(--color-text);
+  padding-right: 10px;
+  padding-left: 4rem;
+  direction: ltr;
+  outline: none;
 }
 
 .mainContent input:hover {
   border: 1px solid #999;
+}
+
+.mainContent input:focus {
+  border: 2px solid var(--color-primary);
+}
+
+.mainContent input::placeholder {
+  color: var(--color-text);
+  text-align: right;
 }
 
 .mainContent input::-webkit-outer-spin-button,
@@ -89,4 +100,35 @@ input::-webkit-inner-spin-button {
 
 .submitBtn button:hover {
   background-color: var(--color-secondary);
+}
+
+.exitBtn {
+  background: none;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.exitBtn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87);
+  padding: 10px;
+  border-radius: 50%;
+}
+.areaCode {
+  position: absolute;
+  left: 2.5rem;
+  top: 8rem;
+  direction: ltr;
+  height: 24px;
+  line-height: 24px;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  padding: 0 12px;
 }

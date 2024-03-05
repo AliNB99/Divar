@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Change English to Farsi
 import { e2p } from "utils/number";
 // styles
@@ -9,34 +9,55 @@ import toast from "react-hot-toast";
 import { ThreeDots } from "react-loader-spinner";
 //api
 import { checkOtp } from "services/auth";
-
-// import { setCookie } from "utils/cookies";
-
+// for set token in cookie
+import { setCookie } from "utils/cookies";
+// show context
+import { useShowContext } from "src/context/ShowContextProvider";
+// icons
+import { RxCross2 } from "react-icons/rx";
+import { useQuery } from "@tanstack/react-query";
+import { getProfile } from "src/services/user";
 
 function CheckOtpForm({ mobile, code, setCode, setStep, setIsAuthShow }) {
   // isLoading for button effect
   const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef();
+  const { refetch } = useQuery(["profile"], getProfile);
+
+  // show form handler
+  const { dispatch } = useShowContext();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const submitHandler = async (event) => {
     event.preventDefault();
     if (code.length !== 5) {
       return toast.error("کد را به درستی وارد");
     }
-
     setIsLoading(true);
     const { response, error } = await checkOtp(mobile, code);
+
+    if (!response && !error) {
+      setIsLoading(false);
+      inputRef.current.focus();
+      return toast.error("کد وارد شده صحیح نمی باشد");
+    }
 
     if (response?.status === 200) {
       setIsLoading(false);
       setCode("");
-      console.log(response.data);
       setCookie(response.data);
+      dispatch({ type: "SHOW_FORM" });
+      refetch();
+
       return toast.success("شما با موفقیت وارد شدید.");
     }
 
-    if (error?.response.status === 401) {
+    if (error?.response.status === 404) {
       setIsLoading(false);
-      return toast.error("کد تایید صحیح نمی باشد.");
+      return toast.error(error.message);
     }
   };
 
@@ -44,11 +65,19 @@ function CheckOtpForm({ mobile, code, setCode, setStep, setIsAuthShow }) {
     <form onSubmit={submitHandler} className={styles.form}>
       <div className={styles.headerContent}>
         <h3>ورود به حساب کاربری</h3>
+        <button
+          className={styles.exitBtn}
+          type="button"
+          onClick={() => dispatch({ type: "SHOW_FORM" })}
+        >
+          <RxCross2 />
+        </button>
       </div>
       <div className={styles.mainContent}>
         <h4>کد تایید را وارد کنید</h4>
         <p>کد پیامک شده به شماره «{e2p(mobile.toString())}» را وارد نمایید</p>
         <input
+          ref={inputRef}
           type="number"
           placeholder="کد تایید ۶ رقمی"
           value={code}

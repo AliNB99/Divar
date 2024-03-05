@@ -6,16 +6,9 @@
   /* color */
   --color-primary: #a62626;
   --color-secondary: #be3737;
-  --color-text: rgb(0 0 0 / 46%);
+  --color-text: rgba(0, 0, 0, 0.56);
   --color-bgBtn: rgba(0, 0, 0, 0.04);
   --color-btn: rgba(0, 0, 0, 0.56);
-}
-
-body {
-  min-height: 100vh;
-  max-width: 1400px;
-  margin: auto;
-  padding: 10px;
 }
 
 * {
@@ -29,4 +22,10 @@ input,
 select {
   font-family: inherit;
   font-size: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

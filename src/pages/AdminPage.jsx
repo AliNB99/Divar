@@ -1,9 +1,9 @@
-import React from 'react'
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 
 function AdminPage() {
-  return (
-    <div>AdminPage</div>
-  )
+  const { data } = useQuery(["category-list"], getCategory);
+  return <div></div>;
 }
 
-export default AdminPage
+export default AdminPage;

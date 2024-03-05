@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import AuthForm from "components/templates/authForm/AuthForm";
+import { useShowContext } from "src/context/ShowContextProvider";
 
 function HomePage() {
-  const [isAuthShow, setIsAuthShow] = useState(true);
 
   return (
     <div>
       home page
-      {isAuthShow && <AuthForm setIsAuthShow={setIsAuthShow} />}
+
     </div>
   );
 }

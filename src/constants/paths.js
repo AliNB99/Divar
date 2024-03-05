@@ -9,6 +9,7 @@ const paths = [
   "services",
   "styles",
   "utils",
+  "context",
 ];
 
 export { paths };
