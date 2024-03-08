@@ -1,0 +1,88 @@
+.container {
+  border: 1px solid black;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  height: fit-content;
+  max-height: 630px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.container h4 {
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 5px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.container li {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding: 15px;
+}
+
+.container li:last-child {
+  border: none;
+}
+
+.slugContent {
+  text-align: end;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.nameContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+}
+
+.deleteBtn {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.deleteBtn button {
+  background-color: #fff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.deleteBtn button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-primary);
+}
+
+.deleteBtn button:disabled {
+  opacity: 0.5;
+}
+
+.container::-webkit-scrollbar {
+  width: 0.2em;
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+@media screen and (max-width: 920px) {
+  .container {
+    max-height: 420px;
+  }
+}

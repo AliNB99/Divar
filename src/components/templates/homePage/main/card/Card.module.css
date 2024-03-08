@@ -1,0 +1,34 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cardImage {
+  height: 140px;
+  display: flex;
+  align-items: center;
+}
+
+.cardImage img {
+  width: 140px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.cardContent h4 {
+  height: 56px;
+}
+
+.cardContent div {
+  color: var(--color-text);
+}

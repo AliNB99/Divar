@@ -5,10 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 import AdminPage from "src/pages/AdminPage";
 import DashboardPage from "src/pages/DashboardPage";
 import HomePage from "src/pages/HomePage";
+import NotFoundPage from "src/pages/404";
 // api
 import { getProfile } from "src/services/user";
-import NotFoundPage from "src/pages/404";
+// loader spinner
 import Loader from "src/components/modules/Loader";
+import AdvertisingPage from "src/pages/AdvertisingPage";
 
 function Router() {
   const { isLoading, data } = useQuery(["profile"], getProfile);
@@ -32,6 +34,7 @@ function Router() {
         }
       />
       <Route path="/*" element={<NotFoundPage />} />
+      <Route path="/advertising/:id" element={<AdvertisingPage />} />
     </Routes>
   );
 }

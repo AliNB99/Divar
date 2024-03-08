@@ -1,0 +1,70 @@
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 500px;
+}
+
+.leftContent img {
+  width: 100%;
+  height: 400px;
+  border-radius: 5px;
+}
+
+.leftContent textarea {
+  resize: none;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.leftContent textarea:focus {
+  border: 2px solid var(--color-primary);
+}
+
+.leftContent textarea::placeholder {
+  color: #ccc;
+}
+
+.leftContent label {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.Feedback {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.Feedback p {
+  font-size: 14px;
+}
+
+.Feedback div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Feedback svg {
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.3s;
+}
+
+.Feedback svg:last-child:hover {
+  color: rgb(93, 163, 93);
+}
+
+.Feedback svg:first-child:hover {
+  color: rgb(210, 82, 82);
+}

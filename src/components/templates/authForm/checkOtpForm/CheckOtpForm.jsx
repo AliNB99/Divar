@@ -15,7 +15,7 @@ import { setCookie } from "utils/cookies";
 import { useShowContext } from "src/context/ShowContextProvider";
 // icons
 import { RxCross2 } from "react-icons/rx";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getProfile } from "src/services/user";
 
 function CheckOtpForm({ mobile, code, setCode, setStep, setIsAuthShow }) {

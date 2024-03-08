@@ -9,7 +9,7 @@ import { IoSearch } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
 import { useState } from "react";
 // components
-import MyDivarList from "src/components/modules/header/MyDivarList";
+import MyDivarList from "src/components/templates/header/MyDivarList";
 import { useShowContext } from "src/context/ShowContextProvider";
 import { Link } from "react-router-dom";
 
@@ -19,9 +19,9 @@ function Header() {
     <header>
       <div className={styles.container}>
         <div className={styles.rightContent}>
-          <a href="#">
+          <Link to="/" href="#">
             <img src="divar.svg" alt="divar-logo" />
-          </a>
+          </Link>
           <div className={styles.verticalLine} />
           <button className={styles.headerBtn}>
             <GrLocation size={18} />

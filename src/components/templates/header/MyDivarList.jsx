@@ -8,16 +8,18 @@ import { AiOutlineShop } from "react-icons/ai";
 
 import styles from "./MyDivarList.module.css";
 import { useShowContext } from "src/context/ShowContextProvider";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getProfile } from "src/services/user";
 import { e2p } from "src/utils/number";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { deleteCookie } from "src/utils/cookies";
 import toast from "react-hot-toast";
 
 function MyDivarList() {
   const { refetch, data } = useQuery(["profile"], getProfile);
   const { dispatch } = useShowContext();
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const clickHandler = (type) => {
     dispatch({ type });
@@ -25,8 +27,10 @@ function MyDivarList() {
   };
 
   const exitHandler = () => {
+    queryClient.clear("my-post-list");
     deleteCookie();
     refetch();
+    navigate("/");
     toast.success("خروج از حساب با موفقیت انجام شد.");
   };
 

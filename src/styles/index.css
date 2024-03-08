@@ -19,7 +19,8 @@
 
 button,
 input,
-select {
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -28,4 +29,8 @@ select {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  list-style: none;
 }

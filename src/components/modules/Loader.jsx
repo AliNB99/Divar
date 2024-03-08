@@ -1,9 +1,9 @@
 import { Oval } from "react-loader-spinner";
 
-function Loader() {
+function Loader({ customHeight }) {
   const style = {
     width: "100%",
-    height: "100vh",
+    height: customHeight || "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

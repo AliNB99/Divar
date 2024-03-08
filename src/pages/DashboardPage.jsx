@@ -1,9 +1,15 @@
-import React from 'react'
+import PostList from "src/components/templates/dashboardPage/PostList/PostList";
+import AddPost from "src/components/templates/dashboardPage/addPost/AddPost";
+
+import styles from "./Dashboard.module.css";
 
 function DashboardPage() {
   return (
-    <div>DashboardPage</div>
-  )
+    <div className={styles.container}>
+      <AddPost />
+      <PostList />
+    </div>
+  );
 }
 
-export default DashboardPage
+export default DashboardPage;

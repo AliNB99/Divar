@@ -1,9 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import CategoryForm from "src/components/templates/adminPage/categoryForm/CategoryForm";
+import CategoryList from "src/components/templates/adminPage/cateogryList/CategoryList";
+
+import styles from "./AdminPage.module.css";
 
 function AdminPage() {
-  const { data } = useQuery(["category-list"], getCategory);
-  return <div></div>;
+  return (
+    <div className={styles.container}>
+      <CategoryForm />
+      <CategoryList />
+    </div>
+  );
 }
 
 export default AdminPage;
